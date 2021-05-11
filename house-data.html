@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/stryle.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <title>House Members</title>
+</head>
+<body >
+  <header>
+    <nav >
+      <div class="d-flex px-5 justify-content-between align-items-center  ">
+        <a  href="index.html"><img  src="img/TGIF.png"  width="450"  alt="TGIF"/></a>
+        <div class="d-flex">
+          <img src="./img/mail.svg" alt="MAIL" width="30" height="30" >
+          <a  class="ms-1 fs-5"  href="mailto:info@tgif.net">info@tgif.net</a>
+        </div>       
+      </div>
+      <ul class="nav navbar-light nav-tabs p-3 mb-2 bg-light text-black border-top border-bottom border-dark" >
+        <li class="nav-item ">
+          <a class="nav-link " aria-current="page" href="index.html">Home</a>
+        </li>
+        <li class="nav-item dropdown ">
+          <a class="nav-link dropdown-toggle  btn-outline-secondary bg-secondary text-white" data-bs-toggle="dropdown" href="#" role="button" >Congress 113</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item active bg-secondary text-white" href="#">House</a></li>
+            <li><a class="dropdown-item bg-light text-dark" href="senate-data.html">Senators</a></li>
+          </ul>
+        </li>
+      </li>
+      <li class="nav-item dropdown ">
+          <a class="nav-link dropdown-toggle  btn-outline-secondary text-primary " data-bs-toggle="dropdown" href="#" role="button" >Attendance</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item bg-light text-dark bg-secondary text-dark" href="house-attendance.html">House</a></li>
+            <li><a class="dropdown-item bg-light text-dark bg-secondary text-dark" href="senate-attendance.html">Senators</a></li>
+          </ul>
+      </li>
+      <li class="nav-item dropdown ">
+          <a class="nav-link dropdown-toggle  btn-outline-secondary text-primary " data-bs-toggle="dropdown" href="#" role="button" >Party Loyalty</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item bg-light text-dark bg-secondary text-dark" href="house-party-loyalty.html">House</a></li>
+            <li><a class="dropdown-item bg-light text-dark bg-secondary text-dark" href="senate-party-loyalty.html">Senators</a></li>
+          </ul>
+      </li>
+      </ul>
+    </nav>
+  </header>
+    <main class="animate__animated animate__fadeIn container p-0">
+    <div >
+    <h2 class="row fs-1 ms-1 mt-5">Congressmen</h2>
+    <p class="row col-8 ms-1">
+      The major power of the House is to pass federal legislation that affects the entire country, although its bills must also be passed by the Senate and further agreed to by the U.S. President before becoming law (unless both the House and Senate re-pass the legislation with a two-thirds majority in each chamber). The House has some exclusive powers: the power to initiate revenue bills, to impeach officials (impeached officials are subsequently tried in the Senate), and to elect the U.S. President in case there is no majority in the Electoral College.</p>
+      <p class="row col-8 ms-2">Each U.S. state is represented in the House in proportion to its population as measured in the census, but every state is entitled to at least one representative. </p>
+           <form action="" class="ms-2">
+            <fieldset class="form-check form-switch d-inline" >
+              <input class="form-check-input" type="checkbox" id="partyDemoc" name="party" value="D" />
+              <label class="form-check-label" for="partyDemoc">Democratic</label>
+            </fieldset>
+            <fieldset class="form-check form-switch d-inline">
+              <input class="form-check-input ms-2" type="checkbox" id="partyRep" name="party" value="R" />
+              <label  class="form-check-label ms-2" for="partyRep">Republican</label>
+            </fieldset>
+            <fieldset class="form-check form-switch d-inline">
+              <input class="form-check-input ms-2" type="checkbox" id="partyInd" name="party" value="ID" />
+              <label class="form-check-label ms-2" for="partyInd">Independent</label>
+            </fieldset>
+            <fieldset class="d-inline ms-5">
+              <select type="select" id="stateSelect">
+                <option value="showAll">All</option>
+              </select>
+              <label class="ms-2" for="state">State</label>
+            </fieldset>
+          </form>
+          <div class="container">
+            <table class="table table-striped table-hover ">
+              <thead>
+                <tr>
+                  <th class="fs-3">Congressmen</th>
+                  <th class="fs-3">Party Affiliation</th>
+                  <th class="fs-3">State</th>
+                  <th class="fs-3">Years in Office</th>
+                  <th class="fs-3">Votes With Party</th>
+                </tr>
+              </thead>
+              <tbody id="houseTable"></tbody>
+            </table>
+        </div>
+      </main>
+        <footer class="p-3 bg-light text-black border-top border-dark text-center ">
+          &copy 2016 TGIF | All Rights Reserved
+      </footer>
+    <script src="./scripts/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+</body>
+</html>

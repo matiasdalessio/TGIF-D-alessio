@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/stryle.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"
+    />
+    <title>House Members Attendance</title>
+  </head>
+  <body >
+    <header>
+      <nav >
+        <div class="d-flex px-5 justify-content-between align-items-center  ">
+          <a  href="index.html"><img  src="img/TGIF.png"  width="450"  alt="TGIF"/></a>
+          <div class="d-flex">
+            <img src="./img/mail.svg" alt="MAIL" width="30" height="30" >
+            <a  class="ms-1 fs-5"  href="mailto:info@tgif.net">info@tgif.net</a>
+          </div>       
+        </div>
+          <ul class="nav navbar-light nav-tabs p-3 mb-2 bg-light text-black border-top border-bottom border-dark" >
+            <li class="nav-item ">
+            <a class="nav-link btn-outline-secondary text-primary" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item dropdown ">
+            <a class="nav-link dropdown-toggle  btn-outline-secondary text-primary " data-bs-toggle="dropdown" href="#" role="button" >Congress 113</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item bg-light text-dark bg-secondary text-dark" href="house-data.html">House</a></li>
+              <li><a class="dropdown-item bg-light text-dark bg-secondary text-dark" href="senate-data.html">Senators</a></li>
+            </ul>
+          </li>
+        </li>
+        <li class="nav-item dropdown ">
+            <a class="nav-link dropdown-toggle  btn-outline-secondary bg-secondary text-white " data-bs-toggle="dropdown" href="#" role="button" >Attendance</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item bg-secondary text-white " href="#">House</a></li>
+              <li><a class="dropdown-item bg-light text-dark bg-secondary text-dark" href="senate-attendance.html">Senators</a></li>
+            </ul>
+        </li>
+        <li class="nav-item dropdown ">
+            <a class="nav-link dropdown-toggle  btn-outline-secondary text-primary " data-bs-toggle="dropdown" href="#" role="button" >Party Loyalty</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item bg-light text-dark bg-secondary text-dark" href="house-party-loyalty.html">House</a></li>
+              <li><a class="dropdown-item bg-light text-dark bg-secondary text-dark" href="senate-party-loyalty.html">Senators</a></li>
+            </ul>
+        </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="container p-0">
+      <div>
+        <div class=" animate__animated animate__fadeInDown d-flex justify-content-between align-items-end mt-5">
+          <h2 class="fs-1">Attendance</h2>
+          <h2 class="fs-2">House at a glance</h2> 
+        </div>   
+        <div class="  d-flex justify-content-between mb-5 pb-4 border-bottom border-dark">  
+          <div class=" animate__animated animate__fadeInLeft d-flex flex-column  col-6">         
+              <p >The Constitution specifies that a majority of members constitutes a quorum to do business in each house. Representatives and senators rarely force the presence of a quorum by demanding quorum calls; thus, in most cases, debates continue even if a majority is not present.</p>
+
+              <p >The Senate uses roll-call votes; a clerk calls out the names of all the senators, each senator stating "aye" or "no" when his or her name is announced. The House reserves roll-call votes for the most formal matters, as a roll-call of all 435 representatives takes quite some time; normally, members vote by electronic device. In the case of a tie, the motion in question fails. In the Senate, the Vice President may (if present) cast the tiebreaking vote.</p>
+          </div> 
+        <div class="d-flex flex-column align-items-end  col-5 text-center">
+        <table class="table animate__animated animate__fadeInRight table-striped table-hover table table-bordered border-dark " >
+            <thead>
+              <tr>
+                <th>Party</th>
+                <th>Number of Reps</th>
+                <th>% Voted with Party</th>
+              </tr>
+            </thead>
+            <tbody id="totalMembers">              
+            </tbody>
+          </table>
+        </div>
+        </div>
+        <div class="d-flex justify-content-evenly mb-5">
+          <div class="flex-grow-1 me-3" >
+          <h2 class="animate__animated animate__fadeInDown">Least Engaged (Bottom 10% Attendance)</h2>
+          <table class="table animate__animated animate__fadeInLeft table-striped table-hover table table-bordered border-dark text-center">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Number of Missed Votes</th>
+                <th>% Missed</th>
+              </tr>
+            </thead>
+            <tbody id="tablaLeastEngaged" >              
+            </tbody>
+          </table>
+        </div>
+        <div class="flex-grow-1 ms-3">
+          <h2 class="animate__animated animate__fadeInDown">Most Engaged (Top 10% Attendance)</h2>
+          <table class="table animate__animated animate__fadeInRight table-striped table-hover table table-bordered border-dark text-center">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Number of Missed Votes</th>
+                <th>% Missed</th>
+              </tr>
+            </thead>
+            <tbody id="tablaMostEngaged" >
+            </tbody>
+          </table>
+        </div>
+        </div>
+      </div>
+      </main>       
+      <footer class="p-3 bg-light text-black border-top border-dark text-center ">
+        &copy 2016 TGIF | All Rights Reserved
+    </footer>
+      <script src="./scripts/script.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+  </body>
+  </html>
